@@ -1,0 +1,93 @@
+/** @format */
+
+@import "tailwindcss";
+
+@theme {
+	--color-accent: rgb(0, 159, 252);
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+}
+
+@keyframes infinite-scroll {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(50%);
+	}
+}
+
+@layer components {
+	.shadow-top {
+		box-shadow: -80px -80px 80px black;
+	}
+	.shadow-bottom {
+		box-shadow: 70px 70px 80px rgba(0, 0, 0), -70px 70px 80px rgba(0, 0, 0);
+	}
+
+	.animate-infinite-scroll-1 {
+		animation-name: infinite-scroll;
+		animation-duration: 120s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		will-change: transform;
+	}
+
+	.animate-infinite-scroll-2 {
+		animation-name: infinite-scroll;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-duration: 80s;
+		will-change: transform;
+	}
+	.animate-infinite-scroll-3 {
+		animation-name: infinite-scroll;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-duration: 100s;
+		will-change: transform;
+	}
+	.animate-infinite-scroll-4 {
+		animation-name: infinite-scroll;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-duration: 90s;
+		will-change: transform;
+	}
+
+	.gradient-radial {
+		background: rgb(0, 159, 252);
+		background: radial-gradient(
+			circle at 50% 1%,
+			rgb(24, 103, 153) 0%,
+			rgba(0, 0, 0, 1) 50%,
+			rgba(0, 0, 0, 1) 100%
+		);
+		background-repeat: no-repeat;
+		background-position: center top; /* Opțional, pentru aliniere */
+	}
+}
+
+html {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	background-color: black;
+}
+
+.no-scrollbar {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE/Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome/Safari/Opera */
+}
