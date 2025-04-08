@@ -10,6 +10,10 @@ function Hero() {
 	return (
 		<section className='w-screen h-screen gradient-radial flex flex-col md:flex-row'>
 			<div className='w-full md:w-[50%] h-full flex flex-col justify-center items-start pl-10 md:ml-20'>
+				<h1 className='absolute top-10 left-10 text-3xl text-white'>
+					! Under development
+				</h1>
+
 				<h1 className='text-white text-3xl md:text-7xl font-bienale font-bold w-max leading-25'>
 					👋I'm RYKY
 				</h1>
