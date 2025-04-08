@@ -4,7 +4,7 @@ import { images } from "../Constants";
 
 function ProjectsScroller() {
 	return (
-		<section className=' w-full h-[800px] flex bg-black  overflow-hidden '>
+		<section className=' w-full h-[800px] flex bg-black  overflow-hidden gap-5'>
 			<Scroller
 				images={images}
 				columnPosition='translateY(0)'

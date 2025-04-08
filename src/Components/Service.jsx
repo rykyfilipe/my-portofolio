@@ -29,8 +29,9 @@ function Service({ title, description, cta, color, imgURL }) {
 
 	return (
 		<div
-			className={`w-[400px] h-[400px] flex-shrink-0 rounded-xl overflow-hidden p-8 flex flex-col
-                justify-between border-2 ${selectedColor.border} transition-all duration-300 group ${selectedColor.hover}`}>
+			className={`w-[350px] h-[400px] md:w-[400px] md:h-[400px] flex-shrink-0 rounded-xl overflow-hidden p-8 flex flex-col
+                justify-between border-2 ${selectedColor.border} transition-all duration-300 group ${selectedColor.hover}
+				snap-center flex-shrink-0`}>
 			<div>
 				<h1 className={`text-3xl font-bold mb-4 `}>{title}</h1>
 				<p className='text-lg text-gray-300'>{description}</p>

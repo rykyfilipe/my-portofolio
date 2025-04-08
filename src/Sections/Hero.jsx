@@ -8,15 +8,15 @@ import googleplay from "../assets/icons/googleplay.svg";
 
 function Hero() {
 	return (
-		<section className='w-screen h-screen gradient-radial flex'>
-			<div className='w-full md:w-[50%] h-full flex flex-col justify-center items-start ml-20 leading-normal'>
+		<section className='w-screen h-screen gradient-radial flex flex-col md:flex-row'>
+			<div className='w-full md:w-[50%] h-full flex flex-col justify-center items-start pl-10 md:ml-20'>
 				<h1 className='text-white text-3xl md:text-7xl font-bienale font-bold w-max leading-25'>
 					👋I'm RYKY
 				</h1>
 				<h1
-					className='text-4xl md:text-7xl font-bienale font-bold w-max break-words leading-[1.2] 
-             text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-white to-blue-500 
-             bg-[length:200%_200%] animate-[gradient_3s_ease-in-out_infinite]'>
+					className='text-3xl md:text-7xl md:w-max font-bienale font-bold  leading-[1.2]
+								text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-white to-blue-500 
+								bg-[length:200%_200%] animate-[gradient_3s_ease-in-out_infinite]'>
 					Web Design +<br /> ReactNative Developer
 				</h1>
 
@@ -34,7 +34,7 @@ function Hero() {
 					<Button imgURL={googleplay} />
 				</div>
 			</div>
-			<div className='w-[50%] h-full flex justify-center items-center '></div>
+			<div className='hidden md:block w-[50%] h-full  justify-center items-center '></div>
 		</section>
 	);
 }
