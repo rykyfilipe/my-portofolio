@@ -3,22 +3,23 @@ import arrow_right from "../assets/icons/arrow-right.svg";
 
 export const experience = [
     {
-        number: 2.5,
-        title: "Years of Experience",
+        number: 20,
+        title: "Projects",
     },
     {
-        number: 10,
-        title: "Projects Completed",
+        number: 5,
+        title: "Collaborations",
     },
     {
-        number: 3,
-        title: "Companies Worked",
+        number: 2,
+        title: "Certification",
     },
     {
-        number: 1,
-        title: "Awards Won",
+        number: 20,
+        title: "LeetCode problems",
     },
 ];
+
 
 export const images = [
     {
@@ -48,76 +49,84 @@ export const images = [
 ];
 export const services = [
     {
-        title: "Cross Platform Development",
-        description: "Using Flutter, your ideas reach the world.",
-        cta: "Know about more 😊",
-        color: "orange",
+        title: "Frontend Development",
+        description: "Specialized in building modern, responsive user interfaces using React, TypeScript, and Tailwind CSS.",
+        cta: "See my work 👨‍💻",
+        color: "purple",
         imgURL: arrow_right,
     },
     {
-        title: "UI/UX Design",
-        description: "Craft beautiful and intuitive user experiences.",
-        cta: "Know about more 😊",
-        color: "red",
-        imgURL: arrow_right,
-    },
-    {
-        title: "Deployment Services",
-        description: "Seamlessly launch your apps, from concept to app stores.",
-        cta: "Know about more 😊",
+        title: "Backend Development",
+        description: "Learning to build RESTful APIs and backend logic using Node.js.",
+        cta: "Work in progress 🚧",
         color: "blue",
         imgURL: arrow_right,
     },
     {
-        title: "Web Development",
-        description: "Build dynamic web experiences.",
-        cta: "Know about more 😊",
-        color: "purple",
+        title: "React Native",
+        description: "Exploring mobile app development with React Native for cross-platform solutions.",
+        cta: "Learning phase 📱",
+        color: "green",
+        imgURL: arrow_right,
+    },
+    {
+        title: "Database Management",
+        description: "Getting comfortable with SQL databases like MySQL and Oracle.",
+        cta: "Currently learning 📚",
+        color: "orange",
         imgURL: arrow_right,
     },
 ];
 
+
 export const projects = [
     {
-        title: "Weather App",
+        title: "AI Interview Chatbot",
         description:
-            "A responsive web application that provides real-time weather updates based on your location. It features detailed forecasts, hourly updates, weather maps, and notifications for extreme weather events. You can check the weather conditions anywhere, anytime, and plan your day accordingly.",
+            "A conversational chatbot designed to simulate technical interviews. Built using React, Tailwind CSS, Node.js, and Gemini API, it mimics realistic question-answer sessions, helping users practice interview scenarios in a dynamic way.",
         imgURL: "https://picsum.photos/400/250?random=1",
         left: true,
     },
     {
-        title: "Task Manager",
+        title: "Cursor Tracker with WebSockets",
         description:
-            "An intuitive and user-friendly task management application designed to help you organize and prioritize your tasks. It offers features like due dates, reminders, and project categories. You can collaborate with teammates, set goals, and track your productivity through a clean and minimalistic interface.",
+            "A real-time cursor tracking app that uses WebSockets to broadcast and visualize users' cursor movements across the screen. Built with Node.js, React, and Socket.io for smooth, live updates.",
         imgURL: "https://picsum.photos/400/250?random=2",
         left: false,
     },
     {
-        title: "Recipe Finder",
+        title: "Mini YouTube Clone",
         description:
-            "A smart recipe finder that lets you search for dishes based on the ingredients you already have at home. It suggests recipes based on your preferences, dietary restrictions, and even the time you have for cooking. You can save your favorite recipes, create shopping lists, and share them with friends.",
+            "A simplified version of YouTube featuring basic video playback, layout, and search functionality. Developed using HTML, CSS, and JavaScript to demonstrate UI structure and user interaction.",
         imgURL: "https://picsum.photos/400/250?random=3",
         left: true,
     },
     {
-        title: "Portfolio Website",
+        title: "Amazon Clone (Mini)",
         description:
-            "A modern, sleek, and fully responsive personal portfolio website to showcase your skills, projects, and achievements. It includes sections for about me, my work, and contact information, as well as interactive animations to highlight your achievements and make a lasting impression on potential clients or employers.",
+            "A basic e-commerce interface inspired by Amazon. Created with HTML, CSS, and vanilla JavaScript to mimic product listings, cart functionality, and user experience flow.",
         imgURL: "https://picsum.photos/400/250?random=4",
         left: false,
     },
     {
-        title: "Crypto Tracker",
+        title: "Banana Game",
         description:
-            "A powerful cryptocurrency tracker that allows users to monitor the latest prices, trends, and market data for their favorite digital currencies. Features include real-time updates, historical charts, price alerts, and detailed information about each coin’s performance, all in an easy-to-navigate interface.",
+            "A fun mini-game made with just JavaScript and CSS. Players click bananas to earn points and buy skins. A simple yet engaging way to practice game logic and UI animations.",
         imgURL: "https://picsum.photos/400/250?random=5",
         left: true,
     },
     {
-        title: "Fitness App",
+        title: "Nike Store Clone",
         description:
-            "A comprehensive fitness app that provides personalized workout plans, nutrition guidance, and progress tracking. It offers a variety of exercises, from strength training to yoga, along with workout tutorials, meal suggestions, and the ability to track your fitness goals. Whether you`re a beginner or an expert, this app adapts to your needs.",
+            "A responsive and stylish online store UI inspired by Nike's website. Built using React and Tailwind CSS to showcase product layouts, filtering, and modern design aesthetics.",
         imgURL: "https://picsum.photos/400/250?random=6",
         left: false,
+    },
+    {
+        title: "Multiplayer Table Game",
+        description:
+            "A multiplayer tabletop-style game built in C using sockets for network communication. Designed for two players to interact in real-time, emphasizing low-level networking concepts.",
+        imgURL: "https://picsum.photos/400/250?random=7",
+        left: true,
     },
 ];
