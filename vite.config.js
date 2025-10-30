@@ -7,7 +7,7 @@ import { imagetools } from 'vite-imagetools';
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), imagetools()],
-  base: "my-portofolio",
+  base: "/my-portofolio/",
   build: {
     rollupOptions: {
       output: {
