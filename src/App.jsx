@@ -1,25 +1,34 @@
 /** @format */
-import Hero from "./Sections/Hero";
-import Experience from "./Sections/Experience";
-import ProjectsScroller from "./Sections/ProjectsScroller";
-import Services from "./Sections/Services";
-import Projects from "./Sections/Projects";
+import { Suspense } from 'react';
+import { ThemeProvider } from "./providers/ThemeProvider";
+import { ThemeToggle } from "./components/ThemeToggle";
+import { lazyLoad } from './utils/lazyLoad';
 import CustomCursor from "./Components/CustumCursor";
-import Footer from "./Sections/Footer";
-import Contact from "./Sections/Contact";
+
+// Lazy load components
+const Hero = lazyLoad(() => import("./Sections/Hero"));
+const Experience = lazyLoad(() => import("./Sections/Experience"));
+const ProjectsScroller = lazyLoad(() => import("./Sections/ProjectsScroller"));
+const Services = lazyLoad(() => import("./Sections/Services"));
+const Projects = lazyLoad(() => import("./Sections/Projects"));
+const Contact = lazyLoad(() => import("./Sections/Contact"));
+const Footer = lazyLoad(() => import("./Sections/Footer"));
 
 function App() {
 	return (
-		<div>
-			<CustomCursor />
-			<Hero />
-			<Experience />
-			<ProjectsScroller />
-			<Services />
-			<Projects />
-			<Contact />
-			<Footer />
-		</div>
+		<ThemeProvider>
+			<div className="min-h-screen bg-background text-foreground">
+				<CustomCursor />
+				<ThemeToggle />
+				<Hero />
+				<Experience />
+				<ProjectsScroller />
+				<Services />
+				<Projects />
+				<Contact />
+				<Footer />
+			</div>
+		</ThemeProvider>
 	);
 }
 

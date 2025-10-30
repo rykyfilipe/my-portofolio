@@ -8,11 +8,10 @@ import googleplay from "../assets/icons/googleplay.svg";
 function Footer() {
     return (
         <footer
-            className='w-full flex flex-col items-center justify-center bg-black h-[300px] mt-20 text-white border-t-1 border-white'>
+            className='w-full flex flex-col items-center justify-center bg-[#010509] h-[300px] mt-20 text-[#E1E7EF] border-t-[1px] border-[#E1E7EF]/10'>
             <div className='flex gap-4 mt-10'>
-                <Button imgURL={linkedin} key='linkedin'/>
-                <Button imgURL={github} key='github'/>
-                <Button imgURL={googleplay} key='googleplay'/>
+                <Button variant="outline" imgURL={linkedin} key='linkedin'/>
+                <Button variant="outline" imgURL={github} key='github'/>
             </div>
             <p className='pt-2'>
                 Build with{" "}
@@ -21,11 +20,11 @@ function Footer() {
                     alt='React logo'
                     className='inline w-6 h-6'
                 />{" "}
-                using <span className='text-blue-500'>💙</span>
+                using <span className='text-[#00A3FF]'>💙</span>
             </p>
 
             <div
-                className='w-full md:px-5 pt-22 flex flex-col md:flex-row items-center justify-between text-neutral-400'>
+                className='w-full md:px-5 pt-22 flex flex-col md:flex-row items-center justify-between text-[#9CA3AF]'>
                 <p>Developed by RYKY</p>
                 <p>&copy; 2025, ALL RIGHTS RESERVED</p>
             </div>

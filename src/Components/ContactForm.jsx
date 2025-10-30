@@ -1,10 +1,39 @@
-import {useEffect, useState} from 'react';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from '../components/Card';
+import Button from './Button';
 import close from '../assets/icons/close.svg';
 
-const ContactForm = ({onClose}) => {
+const inputVariants = {
+    focus: {
+        scale: 1.02,
+        transition: {
+            type: "spring",
+            stiffness: 300,
+            damping: 15
+        }
+    }
+};
+
+const successVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+        opacity: 1, 
+        y: 0,
+        transition: {
+            type: "spring",
+            stiffness: 300,
+            damping: 25
+        }
+    }
+};
+
+const ContactForm = ({ onClose }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     useEffect(() => {
         document.body.classList.add('overflow-hidden');
@@ -12,8 +41,10 @@ const ContactForm = ({onClose}) => {
             document.body.classList.remove('overflow-hidden');
         };
     }, []);
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         const data = {
             service_id: 'service_64zwhx8',
@@ -26,91 +57,142 @@ const ContactForm = ({onClose}) => {
             }
         };
 
-        fetch('https://api.emailjs.com/api/v1.0/email/send', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => {
-                if (response.status === 200) {
-                    alert('Mesaj trimis cu succes!');
-                    onClose();
-                } else {
-                    alert('Eroare la trimiterea mesajului.');
-                }
-            })
-            .catch(error => {
-                alert(`Eroare: ${error.message}`);
+        try {
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
             });
+
+            if (response.status === 200) {
+                setIsSuccess(true);
+                setTimeout(onClose, 2000);
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
+    if (isSuccess) {
+        return (
+            <Card className="relative overflow-hidden bg-background/95 backdrop-blur-lg border border-primary/20 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+                <CardContent className="relative p-8">
+                    <motion.div
+                        variants={successVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="text-center space-y-6"
+                    >
+                        <motion.div 
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: "spring", damping: 10, stiffness: 100 }}
+                            className="text-7xl"
+                        >
+                            ✨
+                        </motion.div>
+                        <h3 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                            Message Sent!
+                        </h3>
+                        <p className="text-foreground/80 text-lg">
+                            Thank you for reaching out. I'll get back to you soon!
+                        </p>
+                    </motion.div>
+                </CardContent>
+            </Card>
+        );
+    }
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-            <div className="relative bg-white rounded-3xl p-8 w-full max-w-2xl text-black">
-                <button
+        <Card className="relative overflow-hidden bg-background/95 backdrop-blur-lg border border-primary/20 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl transform translate-x-16 -translate-y-16" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl transform -translate-x-16 translate-y-16" />
+            
+            <CardHeader className="relative space-y-2 p-6">
+                <motion.button
+                    whileHover={{ scale: 1.1, rotate: 90 }}
+                    whileTap={{ scale: 0.9 }}
                     onClick={onClose}
-                    className="absolute top-4 right-4 text-2xl rounded-full font-bold cursor-pointer hover:bg-stone-300"
+                    className="absolute top-4 right-4 p-2 rounded-full hover:bg-background/50 transition-colors"
                 >
-                    <img src={close} alt="close"/>
-                </button>
+                    <img src={close} alt="close" className="w-6 h-6" />
+                </motion.button>
+                <CardTitle className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Let's Connect
+                </CardTitle>
+                <p className="text-foreground/80">Fill out the form below and I'll get back to you soon.</p>
+            </CardHeader>
 
-                <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
-
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name" className="block mb-1">
+            <CardContent className="relative p-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <motion.div variants={inputVariants} whileFocus="focus">
+                        <label htmlFor="name" className="block text-sm font-medium text-foreground/90 mb-2">
                             Name
                         </label>
                         <input
                             type="text"
                             id="name"
-                            className="w-full p-2 border rounded"
+                            required
+                            className="w-full p-3 rounded-lg bg-background/50 border-2 border-border hover:border-primary/50 focus:border-primary focus:ring-1 focus:ring-primary/50 outline-none transition-all placeholder:text-muted-foreground/50"
                             placeholder="Your name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
-                    </div>
+                    </motion.div>
 
-                    <div>
-                        <label htmlFor="email" className="block mb-1">
+                    <motion.div variants={inputVariants} whileFocus="focus">
+                        <label htmlFor="email" className="block text-sm font-medium text-foreground/90 mb-2">
                             Email
                         </label>
                         <input
                             type="email"
                             id="email"
-                            className="w-full p-2 border rounded"
-                            placeholder="Your email"
+                            required
+                            className="w-full p-3 rounded-lg bg-background/50 border-2 border-border hover:border-primary/50 focus:border-primary focus:ring-1 focus:ring-primary/50 outline-none transition-all placeholder:text-muted-foreground/50"
+                            placeholder="your.email@example.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                    </div>
+                    </motion.div>
 
-                    <div>
-                        <label htmlFor="message" className="block mb-1">
+                    <motion.div variants={inputVariants} whileFocus="focus">
+                        <label htmlFor="message" className="block text-sm font-medium text-foreground/90 mb-2">
                             Message
                         </label>
                         <textarea
                             id="message"
+                            required
                             rows="4"
-                            className="w-full p-2 border rounded"
-                            placeholder="Your message"
+                            className="w-full p-3 rounded-lg bg-background/50 border-2 border-border hover:border-primary/50 focus:border-primary focus:ring-1 focus:ring-primary/50 outline-none transition-all resize-none placeholder:text-muted-foreground/50"
+                            placeholder="Tell me about your project..."
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
-                        ></textarea>
-                    </div>
+                        />
+                    </motion.div>
 
-                    <button
-                        type="submit"
-                        className="bg-black text-white py-2 px-6 rounded hover:bg-gray-800 transition cursor-pointer"
+                    <motion.div
+                        whileHover={{ scale: 1.01 }}
+                        whileTap={{ scale: 0.99 }}
                     >
-                        Send Message
-                    </button>
+                        <Button
+                            type="submit"
+                            text={isSubmitting ? "Sending..." : "Send Message"}
+                            variant="default"
+                            className="w-full py-6 text-lg font-medium"
+                            disabled={isSubmitting}
+                        />
+                    </motion.div>
                 </form>
-            </div>
-        </div>
+            </CardContent>
+        </Card>
     );
 };
 
