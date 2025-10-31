@@ -74,7 +74,7 @@ function Contact() {
                        Let's discuss how we can bring your ideas to life.
                     </p>
 
-                    <motion.div
+                    {/* <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -85,7 +85,7 @@ function Contact() {
                             size="lg"
                             className="text-lg"
                         />
-                    </motion.div>
+                    </motion.div> */}
                 </motion.div>
 
                 <AnimatePresence>

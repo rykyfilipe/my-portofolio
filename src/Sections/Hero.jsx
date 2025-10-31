@@ -153,6 +153,7 @@ const Hero = () => {
                             </motion.div>
 
                             {/* CTA Buttons */}
+                            {/* Temporarily removed contact buttons
                             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-6">
                                 <motion.button
                                     onClick={scrollToContact}
@@ -200,6 +201,7 @@ const Hero = () => {
                                     GitHub
                                 </motion.a>
                             </motion.div>
+                            */}
                         </motion.div>
 
                         {/* Right Visual */}
