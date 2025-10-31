@@ -90,15 +90,16 @@ function Project({ title, description, imgURL, left }) {
             >
                 <Card className="overflow-hidden bg-[radial-gradient(circle_at_top_center,#020817_0%,#010509_100%)] backdrop-blur-sm border border-[#00A3FF]/10 relative z-10">
                     <motion.div className="relative overflow-hidden group">
-                      <motion.img
-                        src={imgURL}
-                        alt={title}
-                        className="w-full h-[300px] object-contain rounded-t-xl"
-                        loading="lazy"
-                        variants={imageVariants}
-                        initial="initial"
-                        whileHover="hover"
-                    />
+                        {imgURL !== null ? (<motion.img
+                            src={imgURL}
+                            alt={title}
+                            className="w-full h-[300px] object-contain rounded-t-xl"
+                            loading="lazy"
+                            variants={imageVariants}
+                            initial="initial"
+                            whileHover="hover"
+                        />) : <ProjectPlaceholder title={title}/>}
+                      
 
                         <motion.div 
                             className="absolute inset-0 bg-[linear-gradient(135deg,#00A3FF_0%,#0057FF_100%)]/5 mix-blend-overlay"
@@ -167,3 +168,76 @@ function Project({ title, description, imgURL, left }) {
 }
 
 export default Project;
+
+
+// ProjectPlaceholder.tsx
+
+
+ function ProjectPlaceholder({
+  title = "Nume proiect",
+  className = "",
+}) {
+  return (
+    <div
+      className={
+        "w-full max-w-4xl mx-auto " +
+        className
+      }
+    >
+      <div
+        className="
+          relative
+          aspect-video            /* 16:9 ratio */
+          rounded-2xl
+          border
+          border-gray-200
+          dark:border-neutral-700
+          bg-gradient-to-tr
+          from-gray-50 to-gray-100
+          dark:from-neutral-900 dark:to-neutral-800
+          shadow-sm
+          overflow-hidden
+          flex items-center justify-center
+        "
+        role="img"
+        aria-label={`Placeholder: nu există imagine pentru proiectul ${title}`}
+      >
+        {/* Icon + text centered */}
+        <div className="flex flex-col items-center gap-4 px-6 text-center">
+          {/* pictograma */}
+          <svg
+            width="86"
+            height="86"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+            className="text-neutral-400 dark:text-neutral-400"
+          >
+            <rect x="1.5" y="4.5" width="21" height="15" rx="2.5" stroke="currentColor" strokeWidth="1.2" />
+            <path d="M6 9l3 3 2-2 4 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="17.5" cy="8.5" r="0.9" fill="currentColor" />
+          </svg>
+
+          {/* Titlu */}
+          <div className="text-lg font-semibold text-neutral-800 dark:text-neutral-100">
+            Project image
+          </div>
+
+          {/* Mesaj clar in romana */}
+          <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-[70%]">
+There is currently no image for this project. You can upload one or use a mockup to demonstrate the interface.          </p>
+
+          {/* Optional: buton upload (stilizat, dar fără acțiune) */}
+         
+        </div>
+
+        {/* Badge mic sus-dreapta */}
+        <span className="absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-md bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600">
+         No image
+        </span>
+      </div>
+
+      
+    </div>
+  );
+}

@@ -47,7 +47,7 @@ const ContactForm = ({ onClose }) => {
         setIsSubmitting(true);
 
         const data = {
-            service_id: 'service_64zwhx8',
+            service_id: 'service_yscjc1l',
             template_id: 'template_v2y9a97',
             user_id: '-wWsEaw_q3ZlOIKj3',
             template_params: {
@@ -172,7 +172,7 @@ const ContactForm = ({ onClose }) => {
                             required
                             rows="4"
                             className="w-full p-3 rounded-lg bg-background/50 border-2 border-border hover:border-primary/50 focus:border-primary focus:ring-1 focus:ring-primary/50 outline-none transition-all resize-none placeholder:text-muted-foreground/50"
-                            placeholder="Tell me about your project..."
+                            placeholder="Tell me about your thoughts"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         />

@@ -14,10 +14,17 @@ function Scroller({ columnPosition, animation, images }) {
 				{repeatedImages.map((project, index) => (
 					<motion.div
 						key={`first-${project.id}-${index}`}
-						className="relative group my-4"
+						className="
+							relative group my-6 
+							w-[260px] h-[520px]        /* proporție tip telefon */
+							bg-black border-4 border-neutral-800 rounded-[2rem]
+							shadow-lg shadow-gray-700/30
+							overflow-hidden
+							flex items-center justify-center
+						"
 						whileHover={{ scale: 1.05 }}
 						transition={{ duration: 0.3 }}
-					>
+						>
 						<motion.img
 							src={project.image}
 							className='

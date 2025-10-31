@@ -1,6 +1,27 @@
 /** @format */
 import arrow_right from "../assets/icons/arrow-right.svg";
 import project_1 from "../assets/images/project_1.png"
+import project_2 from "../assets/images/project_2.png"
+
+import project_4 from "../assets/images/project_4.png"
+import project_5 from "../assets/images/project_5.png"
+
+
+import imagine1 from "../assets/images/1.png";
+import imagine2 from "../assets/images/2.png";
+import imagine3 from "../assets/images/3.png";
+import imagine4 from "../assets/images/4.png";
+import imagine5 from "../assets/images/5.png";
+import imagine6 from "../assets/images/6.png";
+import imagine7 from "../assets/images/7.png";
+import imagine8 from "../assets/images/8.png";
+import imagine9 from "../assets/images/9.png";
+import imagine10 from "../assets/images/10.png";
+import imagine11 from "../assets/images/11.png";
+import imagine12 from "../assets/images/12.png";
+import imagine13 from "../assets/images/13.png";
+import imagine14 from "../assets/images/14.png";
+
 
 export const experience = [
     {
@@ -23,31 +44,23 @@ export const experience = [
 
 
 export const images = [
-    {
-        image: "https://picsum.photos/400/250?random=1",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=2",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=1",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=5",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=1",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=2",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=1",
-    },
-    {
-        image: "https://picsum.photos/400/250?random=5",
-    },
+  { image: imagine1 },
+  { image: imagine2 },
+  { image: imagine3 },
+  { image: imagine4 },
+  { image: imagine5 },
+  { image: imagine6 },
+  { image: imagine7 },
+  { image: imagine8 },
+  { image: imagine9 },
+  { image: imagine10 },
+  { image: imagine11 },
+  { image: imagine12 },
+  { image: imagine13 },
+  { image: imagine14 },
+
 ];
+
 export const services = [
     {
         title: "Frontend Development",
@@ -105,7 +118,7 @@ export const projects = [
             "• Interview history and progress tracking\n" +
             "• Personalized feedback and improvement suggestions\n\n" +
             "Tech Stack: React.js, Vite, Tailwind CSS, Node.js, Express.js, MySQL, Google Gemini API",
-        imgURL: "https://picsum.photos/400/250?random=2",
+        imgURL:project_2,
         left: false,
     },
     {
@@ -119,7 +132,7 @@ export const projects = [
             "• Real-time notifications for new messages\n" +
             "• Online/offline status indicators\n\n" +
             "Tech Stack: Node.js, Express.js, Socket.io, MySQL, React, Tailwind CSS",
-        imgURL: "https://picsum.photos/400/250?random=3",
+        imgURL: null,
         left: true,
     },
     {
@@ -132,7 +145,7 @@ export const projects = [
             "• Responsive implementation for all screen sizes\n" +
             "• RESTful API for data management\n\n" +
             "Tech Stack: HTML5, CSS3, JavaScript, Express.js, Node.js",
-        imgURL: "https://picsum.photos/400/250?random=4",
+        imgURL: project_4,
         left: false,
     },
     {
@@ -145,7 +158,7 @@ export const projects = [
             "• API integration for stock and price management\n" +
             "• Responsive design optimized for mobile\n\n" +
             "Tech Stack: HTML5, CSS3, JavaScript, REST APIs",
-        imgURL: "https://picsum.photos/400/250?random=5",
+        imgURL: project_5,
         left: true,
     },
     {
@@ -158,7 +171,7 @@ export const projects = [
             "• weatherapi.com integration for accurate data\n" +
             "• Favorite locations saving\n\n" +
             "Tech Stack: HTML5, CSS3, JavaScript, Weather API",
-        imgURL: "https://picsum.photos/400/250?random=6",
+        imgURL: null,
         left: false,
     },
     {
@@ -171,7 +184,7 @@ export const projects = [
             "• Custom protocol for network communication\n" +
             "• Efficient game state management\n\n" +
             "Tech Stack: C, Socket Programming, POSIX Threads",
-        imgURL: "https://picsum.photos/400/250?random=7",
+        imgURL: null,
         left: true,
     },
     {
@@ -184,7 +197,7 @@ export const projects = [
             "• Slot Machine - Slot machine game with CSS animations\n" +
             "• Live Cursor Broadcast - Real-time cursor position broadcasting system between users\n\n" +
             "Tech Stack: React, JavaScript, CSS3, WebSocket",
-        imgURL: "https://picsum.photos/400/250?random=8",
+        imgURL: null,
         left: false,
     }
 ];
