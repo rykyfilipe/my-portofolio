@@ -86,6 +86,13 @@ function Projects() {
                     ))}
                 </motion.div>
             </div>
+            {/* Gradient transition to Contact section */}
+            <div
+                className="pointer-events-none absolute left-0 right-0 bottom-0 h-32"
+                style={{
+                    background: "linear-gradient(180deg, #010509 0%, rgba(2,8,23,0.9) 100%)"
+                }}
+            />
         </Section>
     );
 }

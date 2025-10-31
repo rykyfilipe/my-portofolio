@@ -32,7 +32,7 @@ function Experience() {
                                 scale: 1,
                                 transition: { delay: index * 0.1 }
                             } : {}}
-                            className='group relative flex flex-col items-center gap-3 text-center p-6 rounded-2xl bg-[#020817]/50 backdrop-blur-sm transition-colors'
+                            className='group relative flex flex-col items-center gap-3 text-center p-6 rounded-2xl bg-transparent backdrop-blur-sm transition-colors'
                         >
                             <span className='text-white text-5xl md:text-6xl lg:text-7xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text  group-hover:from-accent group-hover:to-primary transition-all duration-500'>
                                 {item.number}+

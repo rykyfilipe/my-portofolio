@@ -16,7 +16,9 @@ function Scroller({ columnPosition, animation, images }) {
 						key={`first-${project.id}-${index}`}
 						className="
 							relative group my-6 
-							w-[260px] h-[520px]        /* proporție tip telefon */
+							h-[200px] w-[100px] min-w-[80px] min-h-[160px] 
+								md:h-[300px] md:w-[150px] md:min-w-[120px] md:min-h-[240px]
+								lg:h-[500px] lg:w-[300px] lg:min-w-[200px] lg:min-h-[400px]
 							bg-black border-4 border-neutral-800 rounded-[2rem]
 							shadow-lg shadow-gray-700/30
 							overflow-hidden
@@ -31,7 +33,7 @@ function Scroller({ columnPosition, animation, images }) {
 								h-[200px] w-[100px] min-w-[80px] min-h-[160px] 
 								md:h-[300px] md:w-[150px] md:min-w-[120px] md:min-h-[240px]
 								lg:h-[500px] lg:w-[300px] lg:min-w-[200px] lg:min-h-[400px]
-								object-cover rounded-3xl
+								object-cover rounded-[2rem]
 								transition-all duration-300
 								group-hover:shadow-[0_0_30px_rgba(0,163,255,0.3)]
 							'

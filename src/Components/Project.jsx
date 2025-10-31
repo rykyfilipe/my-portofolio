@@ -170,7 +170,6 @@ function Project({ title, description, imgURL, left }) {
 export default Project;
 
 
-// ProjectPlaceholder.tsx
 
 
  function ProjectPlaceholder({
@@ -178,40 +177,32 @@ export default Project;
   className = "",
 }) {
   return (
-    <div
-      className={
-        "w-full max-w-4xl mx-auto " +
-        className
-      }
-    >
+    <div className={`w-full h-full ${className}`}>
       <div
         className="
           relative
-          aspect-video            /* 16:9 ratio */
-          rounded-2xl
-          border
-          border-gray-200
-          dark:border-neutral-700
-          bg-gradient-to-tr
-          from-gray-50 to-gray-100
-          dark:from-neutral-900 dark:to-neutral-800
-          shadow-sm
+          w-full h-[300px]
+          rounded-t-xl
+          border border-[#00A3FF]/10
+          bg-[radial-gradient(circle_at_center,#020817_0%,#010509_100%)]
           overflow-hidden
           flex items-center justify-center
+          group
+          mb-5
         "
         role="img"
         aria-label={`Placeholder: nu există imagine pentru proiectul ${title}`}
       >
         {/* Icon + text centered */}
-        <div className="flex flex-col items-center gap-4 px-6 text-center">
+        <div className="flex flex-col items-center gap-4 px-4 sm:px-6 text-center z-10">
           {/* pictograma */}
           <svg
-            width="86"
-            height="86"
+            width="64"
+            height="64"
             viewBox="0 0 24 24"
             fill="none"
             aria-hidden="true"
-            className="text-neutral-400 dark:text-neutral-400"
+            className="text-[#E1E7EF]/40"
           >
             <rect x="1.5" y="4.5" width="21" height="15" rx="2.5" stroke="currentColor" strokeWidth="1.2" />
             <path d="M6 9l3 3 2-2 4 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -219,25 +210,39 @@ export default Project;
           </svg>
 
           {/* Titlu */}
-          <div className="text-lg font-semibold text-neutral-800 dark:text-neutral-100">
-            Project image
+          <div className="text-base sm:text-lg font-semibold text-[#E1E7EF]/90">
+            Project Preview
           </div>
 
-          {/* Mesaj clar in romana */}
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-[70%]">
-There is currently no image for this project. You can upload one or use a mockup to demonstrate the interface.          </p>
-
-          {/* Optional: buton upload (stilizat, dar fără acțiune) */}
-         
+          {/* Mesaj */}
+          <p className="text-xs sm:text-sm text-[#E1E7EF]/60 max-w-[240px] sm:max-w-[70%]">
+            No preview image available for this project yet
+          </p>
         </div>
 
-        {/* Badge mic sus-dreapta */}
-        <span className="absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-md bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-600">
-         No image
+        {/* Gradient overlay */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(0,163,255,0.1) 0%, transparent 70%)',
+            mixBlendMode: 'overlay'
+          }}
+        />
+
+        {/* Border glow */}
+        <div 
+          className="absolute -inset-[2px] rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{
+            background: 'linear-gradient(45deg, rgba(0,163,255,0.1), rgba(0,87,255,0.1))',
+            filter: 'blur(2px)'
+          }}
+        />
+
+        {/* Badge */}
+        <span className="absolute top-3 right-3 px-2 py-1 text-xs font-medium rounded-md bg-[#020817]/50 text-[#E1E7EF]/70 border border-[#00A3FF]/10">
+          No preview
         </span>
       </div>
-
-      
     </div>
   );
 }

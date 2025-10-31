@@ -114,6 +114,7 @@ function Contact() {
                     )}
                 </AnimatePresence>
             </div>
+           
         </Section>
     );
 }

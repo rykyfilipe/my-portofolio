@@ -8,7 +8,7 @@ import googleplay from "../assets/icons/googleplay.svg";
 function Footer() {
     return (
         <footer
-            className='w-full flex flex-col items-center justify-center bg-[#010509] h-[300px] mt-20 text-[#E1E7EF] border-t-[1px] border-[#E1E7EF]/10'>
+            className='w-full flex flex-col items-center justify-center bg-[#010509] h-[300px] text-[#E1E7EF] border-t-[1px] border-[#E1E7EF]/10'>
             <div className='flex gap-4 mt-10'>
                 <Button variant="outline" imgURL={linkedin} key='linkedin'/>
                 <Button variant="outline" imgURL={github} key='github'/>

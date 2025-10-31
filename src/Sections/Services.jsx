@@ -50,8 +50,17 @@ function Services() {
                             <Service {...service} />
                         </motion.div>
                     ))}
+
                 </motion.div>
+                        
             </div>
+            {/* Gradient transition to Projects section */}
+            <div
+                className="pointer-events-none absolute left-0 right-0 bottom-0 h-32"
+                style={{
+                    background: "linear-gradient(180deg, rgba(2,8,23,0) 0%, #010509 100%)"
+                }}
+            />
         </Section>
     );
 }
