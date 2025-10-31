@@ -49,7 +49,7 @@ const ContactForm = ({ onClose }) => {
         const data = {
             service_id: 'service_yscjc1l',
             template_id: 'template_v2y9a97',
-            user_id: '-wWsEaw_q3ZlOIKj3',
+            user_id: '5zD8tI7qqxHWdmpXi',
             template_params: {
                 'username': name,
                 'email': email,
