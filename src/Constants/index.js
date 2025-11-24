@@ -5,6 +5,8 @@ import project_2 from "../assets/images/project_2.png"
 
 import project_4 from "../assets/images/project_4.png"
 import project_5 from "../assets/images/project_5.png"
+import project_5 from "../assets/images/project_5.png"
+import project_6 from "../assets/images/project_6.png"
 
 
 import imagine1 from "../assets/images/1.png";
@@ -25,7 +27,7 @@ import imagine14 from "../assets/images/14.png";
 
 export const experience = [
     {
-        number: 10,
+        number: 20,
         title: "Projects",
     },
     {
@@ -109,6 +111,22 @@ export const projects = [
         left: true,
     },
     {
+        title: "Income Tracker - Personal Finance Dashboard",
+        description:
+            "Modern web application for personal finance management:\n\n" +
+            "• 4 interactive charts (Bar Chart, Pie Charts) for financial analysis\n" +
+            "• Complete tracking of income, bills, expenses, debts, and savings\n" +
+            "• Theme system with 3 customizable colors (primary, secondary, accent)\n" +
+            "• Multi-currency support: 9 currencies ($, €, £, ¥, ₹, R, lei, CHF, kr)\n" +
+            "• Dynamic tables with auto-expanding rows and intelligent cleanup\n" +
+            "• Automatic calculations: Net Income, Disposable Income, budget analysis\n" +
+            "• Responsive design optimized for desktop and mobile\n\n" +
+            "Tech Stack: React 18, TypeScript, Chart.js, Context API, Vite\n" +
+            "Live: https://rykyfilipe.github.io/income-traker/",
+        imgURL: project_6,
+        left: false,
+    },
+    {
         title: "Interview ChatBot",
         description:
             "Innovative web application for technical interview simulation:\n\n" +
@@ -119,7 +137,7 @@ export const projects = [
             "• Personalized feedback and improvement suggestions\n\n" +
             "Tech Stack: React.js, Vite, Tailwind CSS, Node.js, Express.js, MySQL, Google Gemini API",
         imgURL:project_2,
-        left: false,
+        left: true,
     },
     {
         title: "Real-time Chat Application",
